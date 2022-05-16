@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+           background-color: aliceblue;
+            background-repeat: no-repeat;
+            height: 100vh;
+           
+        }
+        h1{
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .calculadora-pai {
+            height: 100vh;
+            margin-top: 5%;
+        }
+
+        .form {
+            width: 300px;
+            background-color: yellow;
+            height: 330px;
+            box-shadow: 2px 1px 10px rgba(255, 0, 0, 0.548);
+            margin: 0 auto;
+            border: 3px solid black;
+            border-radius: 3px;
+
+
+        }
+
+        .c-pai {
+            margin: 0 auto;
+            text-align: center;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+
+
+        }
+
+        .botao {
+            cursor: pointer;
+            padding: 10px;
+            width: 30%;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.856);
+            color: white;
+            border: 1px solid white;
+            height: 45px;
+            font-weight: bold;
+            font-size: 21px;
+            
+        }
+
+        .botao:hover {
+            background-color: black;
+        }
+        .resu-pai{
+            
+        }
+
+        #resu {
+            background-color: white;
+            border: 1px solid black;
+            width: 240px;
+            height: 29px;
+            text-align: right;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0 auto;
+            margin-top: 5px;
+    
+        }
+        footer{
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <div class="calculadora-pai">
+        <h1>CALCULADORA</h1>
+        <div class="form">
+            <div class="resu-pai">
+                <p id="resu"></p>
+            </div>
+            <div class="c-pai">
+                <button class="botao" onclick="insert('1')">1</button>
+                <button class="botao" onclick="insert('2')">2</button>
+                <button class="botao" onclick="insert('3')">3</button>
+                <button class="botao" onclick="insert('4')">4</button>
+                <button class="botao" onclick="insert('5')">5</button>
+                <button class="botao" onclick="insert('6')">6</button>
+                <button class="botao" onclick="insert('7')">7</button>
+                <button class="botao" onclick="insert('8')">8</button>
+                <button class="botao" onclick="insert('9')">9</button>
+                <button class="botao" onclick="insert('0')">0</button>
+                <button class="botao" onclick="insert('-')">-</button>
+                <button class="botao" onclick="insert('+')">+</button>
+                <button class="botao" onclick="insert('*')">*</button>
+                <button class="botao" onclick="insert('/')">/</button>
+                <button class="botao" onclick="insert('.')">.</button>
+
+                <button id="mais" class="botao" onclick="back()">
+                    <</button>
+                        <button id="mais" class="botao" onclick="limpa()">C</button>
+                        <button class="botao" id="calcular">=</button>
+            </div>
+        </div>
+    </div>
+    <footer>Desenvolvido por Elias de Souza - 2022 &copy;</footer>
+
+
+    <!-- SCRIPT -->
+    <script>
+
+        var calcular = document.querySelector("#calcular").addEventListener("click", function () {
+            var resultado = document.querySelector("#resu").innerHTML;
+            if (resultado) {
+                document.querySelector("#resu").innerHTML = eval(resultado);
+            }
+
+        })
+
+        function insert(num) {
+            var numero = document.querySelector("#resu").innerHTML
+            document.querySelector("#resu").innerHTML = numero + num
+        }
+        function limpa() {
+            document.querySelector("#resu").innerHTML = "";
+        }
+        function back() {
+            var resultado = document.querySelector("#resu").innerHTML;
+            document.querySelector("#resu").innerHTML = resultado.substring(0, resultado.length - 1)
+        }
+
+    </script>
+
+</body>
+
+</html>
