@@ -11,7 +11,7 @@ header {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    background-color: rgb(0, 255, 42);
+    background-color: rgb(202, 255, 211);
 
 }
 
@@ -50,7 +50,7 @@ img {
     width: 50%;
     margin: 0 auto;
     border: 1px solid rgba(0, 0, 0, 0.329);
-    background-color: rgba(166, 255, 0, 0.897);
+    background-color: rgb(202, 255, 211);
 }
 
 .form {
